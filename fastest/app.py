@@ -4,7 +4,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/")
+@app.get("/{ip}")
 def root(ip: str):
     url = f"http://ip-api.com/json/{ip}"
     response = requests.get(url)
